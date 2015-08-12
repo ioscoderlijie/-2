@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LifeModel.h"
+#import "BaseTableViewCell.h"
 
-@interface LifeTableViewCell : UITableViewCell
+@interface LifeTableViewCell :BaseTableViewCell
+@property (strong, nonatomic) UIImageView *contentImage;
+
+- (void)configureCellInfo:(LifeModel *)lifeModel;
 
 @end

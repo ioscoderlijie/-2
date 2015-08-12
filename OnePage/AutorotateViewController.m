@@ -13,16 +13,34 @@
 @end
 
 @implementation AutorotateViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
+//不支持旋转
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+
+//注意:如果我的原VC是横屏，但是弹出来一个要竖屏的.此时不能重写下面的方法,否则崩溃
+//支持的旋转方向
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationPortrait;
+}
+
+//一开始的屏幕旋转方向
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
+
+ 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 /*
 #pragma mark - Navigation

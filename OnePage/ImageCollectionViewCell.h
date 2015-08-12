@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CollectionCellModel.h"
 
 @interface ImageCollectionViewCell : UICollectionViewCell
 
+- (void)configureCellWithModel:(CollectionCellModel *)model;
+
++ (CGFloat)calculateHeight:(CollectionCellModel *)model;
+//调整高度
+- (void)adjustSubviewsFrame:(CollectionCellModel *)model;
 @end

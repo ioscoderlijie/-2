@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface SendValueTap : UITapGestureRecognizer
+//添加一个属性,记录图片的地址
+@property (copy, nonatomic) NSString *userInfo;
 
+@property (strong, nonatomic) NSIndexPath *indexPath;
 @end

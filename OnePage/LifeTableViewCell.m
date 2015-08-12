@@ -7,17 +7,32 @@
 //
 
 #import "LifeTableViewCell.h"
+#import "URL.h"
+#import "UIImageView+WebCache.h"
 
 @implementation LifeTableViewCell
-
-- (void)awakeFromNib {
-    // Initialization code
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        [self.mainView addSubview:self.contentImage];
+    }
+    return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+//添加主页图片
+- (UIImageView *)contentImage {
+    if (!_contentImage) {
+        self.contentImage = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.headerImage.frame), CGRectGetMaxY(self.contentLabel.frame) + 10, CGRectGetWidth(self.contentLabel.frame) + 10, 150)];
+    }
+    return _contentImage;
 }
 
+- (void)configureCellInfo:(LifeModel *)lifeModel {
+    [self.headerImage sd_setImageWithURL:[NSURL URLWithString:lifeModel.profile_image] placeholderImage:[UIImage imageNamed:@"qq.jpg"]];
+    self.headerNameLabel.text = lifeModel.screen_name;
+    self.timeLabel.text = lifeModel.created_at;
+    self.contentLabel.text = lifeModel.contentModel.title;
+    [self.contentImage sd_setImageWithURL:[NSURL URLWithString:lifeModel.contentModel.img_url] placeholderImage:[UIImage imageNamed:@"LinkTextDefaultIcon"]];
+}
 @end

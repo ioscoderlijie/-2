@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface MenuViewController : UIViewController
+@property (nonatomic, strong) UIViewController *centerViewController;
+@property (nonatomic, strong) UIViewController *leftViewController;
+@property (nonatomic, strong) UIViewController *rightViewController;
+
+- (void)presentLeftMenu;
+- (void)presentRightMenu;
+
 
 @end

@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class MenuViewController;
+
 @interface UIViewController (MenuVC)
+@property(strong, readonly, nonatomic) MenuViewController *menuVC;
+
+- (IBAction)presentLeftMenuVC:(id)sender;
+- (IBAction)presentRightMenuVC:(id)sender;
+
+
+
+
 
 @end

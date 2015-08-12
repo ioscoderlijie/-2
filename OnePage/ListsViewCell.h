@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ListsViewCell : UITableViewCell
-
+@property (strong, nonatomic) UIImageView *headerImage;
+@property (strong, nonatomic) UILabel *titleLabel;
+@property (strong, nonatomic) UILabel *subTitleLabel;
+@property (strong, nonatomic) UIView *cellView;
 @end

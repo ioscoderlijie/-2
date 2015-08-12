@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InfoModel.h"
 
 @interface ImageTableViewCell : UITableViewCell
+
+@property (strong, nonatomic) UIImageView *myImageView;
+@property (strong, nonatomic) UILabel *infoImageLabel;
+
+- (void)configureCellWithModel:(InfoModel *)model;
+
+//计算高度
++ (CGFloat)calculateHeight:(InfoModel *)model;
+
+//调整高度
+- (void)adjustSubviewsFrame:(InfoModel *)model;
 
 @end

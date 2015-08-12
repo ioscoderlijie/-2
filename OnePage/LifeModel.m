@@ -9,5 +9,22 @@
 #import "LifeModel.h"
 
 @implementation LifeModel
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
+    if ([key isEqualToString:@"richtxt"]) {
+        self.contentModel = [ContentModel contentWithDictionary:value];
+    }
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)dic {
+    self = [super init];
+    if (self) {
+        [self setValuesForKeysWithDictionary:dic];
+    }
+    return self;
+}
+//便利构造器
++ (instancetype)lifeWithDictionary:(NSDictionary *)dic {
+    return [[LifeModel alloc] initWithDictionary:dic];
+}
 
 @end

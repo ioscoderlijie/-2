@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ImageViewController : UIViewController
-
+@property (copy, nonatomic) NSString *imageURL;
 @end

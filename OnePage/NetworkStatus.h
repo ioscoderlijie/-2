@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface NetworkStatus : NSObject
-
+//判断当前的网络状态
++ (NSString *)networkingStatesFromStatebar;
 @end

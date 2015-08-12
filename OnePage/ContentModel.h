@@ -9,5 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface ContentModel : NSObject
+//正文
+@property (nonatomic, copy) NSString *title;
+//正文图片
+@property (nonatomic, copy) NSString *img_url;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dic;
++ (instancetype)contentWithDictionary:(NSDictionary *)dic;
 
 @end

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface InfoTableViewController : UITableViewController
-
+@property (nonatomic, strong) NSNumber *pin_id;
 @end

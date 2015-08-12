@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
+//设置界面是否支持旋转
 @interface AutorotateViewController : UINavigationController
-
 @end
