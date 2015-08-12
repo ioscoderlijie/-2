@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  RightViewController.h
 //  OnePage
 //
 //  Created by lanouhn on 15/7/27.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface RightViewController : UIViewController
 
 @end
-
